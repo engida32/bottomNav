@@ -11,26 +11,27 @@ class bottomNavigation extends StatefulWidget {
 }
 
 class _bottomNavigationState extends State<bottomNavigation> {
+  int _page =0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
     
-        appBar: AppBar(
-          backgroundColor: Colors.green[200],
+        // appBar: AppBar(
+        //   backgroundColor: Colors.tealAccent,
       
-          title: Text("BottomNav", style: TextStyle(color: Colors.black)),
-          centerTitle: true,
-        ),
+        //   title: Text("BottomNavigation", style: TextStyle(color: Colors.black)),
+        //   centerTitle: true,
+        // ),
         body: Container(
-          color: Colors.amberAccent,
+          color: Colors.lightBlue,
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  "Bottom Navigation ",
+                  "Bottom Navigation  $_page ",
                   style: TextStyle(color: Colors.black,fontSize: 33),
                 )
               ],
@@ -39,18 +40,27 @@ class _bottomNavigationState extends State<bottomNavigation> {
         ),
         bottomNavigationBar: CurvedNavigationBar(
           color: Colors.greenAccent,
-          backgroundColor: Colors.amberAccent,
-          buttonBackgroundColor: Colors.greenAccent,
-          height: 65,
+          backgroundColor: Colors.lightBlue,
+          buttonBackgroundColor: Colors.tealAccent,
+          height: 75,
           items: <Widget>[
             Icon(Icons.school, size: 20, color: Colors.black),
-            Icon(Icons.add_box, size: 20, color: Colors.black),
-            Icon(Icons.compare_arrows, size: 20, color: Colors.black),
-            Icon(Icons.exit_to_app, size: 20, color: Colors.black),
             Icon(Icons.favorite, size: 20, color: Colors.black),
+            Icon(Icons.compare_arrows, size: 30, color: Colors.black),
+            Icon(Icons.call_split, size: 30, color: Colors.black),
+            Icon(Icons.perm_identity, size: 30, color: Colors.black),
 
           ],
+          animationDuration: Duration(
+            milliseconds: 500
+          ),
+          index: 2,
+          animationCurve: Curves.easeInOutCirc,
           onTap: (index) {
+            setState(() {
+               _page=index;
+
+            });
             print('u are on the $index icon ');
           },
         ),
