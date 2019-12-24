@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 void main() => runApp(bottomNavigation());
 
 class bottomNavigation extends StatefulWidget {
-  bottomNavigation({Key key}) : super(key: key);
 
   @override
   _bottomNavigationState createState() => _bottomNavigationState();
@@ -42,7 +41,7 @@ class _bottomNavigationState extends State<bottomNavigation> {
           color: Colors.greenAccent,
           backgroundColor: Colors.lightBlue,
           buttonBackgroundColor: Colors.tealAccent,
-          height: 75,
+          height: 55,
           items: <Widget>[
             Icon(Icons.school, size: 20, color: Colors.black),
             Icon(Icons.favorite, size: 20, color: Colors.black),
